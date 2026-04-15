@@ -141,7 +141,11 @@ def pig_latin(string):
             i = 0
             while word[i] not in vowels:
                 i += 1
+                if word[i-1] == 'q' and word[i] == 'u':
+                    i += 1
+                    break
             result.append(word[i:] + word[:i] + "ay")
     return " ".join(result)
 
-print(pig_latin("you arer the only exception"))
+print(pig_latin("quiet"))
+print(pig_latin("you are the only exception"))
