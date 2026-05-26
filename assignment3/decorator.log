@@ -1,0 +1,25 @@
+this string would be logged
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+function: takes_positional
+positional parameters: [1, 2, 3]
+keyword parameters: none
+return: True
+function: say_hello
+positional parameters: none
+keyword parameters: none
+return: None
+function: takes_positional
+positional parameters: [1, 2, 3]
+keyword parameters: none
+return: True
+function: takes_keyword
+positional parameters: none
+keyword parameters: {'name': 'Jordan', 'age': 35}
+return: <function logger_decorator at 0x00000178A9B937F0>
