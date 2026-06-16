@@ -1,0 +1,14 @@
+The hardest part of this assignment was finding the right HTML class 
+names for the library search results. The developer tools were really 
+confusing and I could not get the element highlighting to work the 
+way the lesson described. I ended up printing the raw HTML from the 
+first book result using Python to find the class names that way instead.
+
+I also ran into an issue where my script came back with 0 books the 
+first time I ran it. The page just had not finished loading before 
+the code tried to find elements. Adding a 3 second delay after 
+loading the page fixed that.
+
+The OWASP page in the assignment did not show the Top 10 list 
+directly. I had to follow a link to the 2025 version to find the 
+actual list and used that URL for my scraper.

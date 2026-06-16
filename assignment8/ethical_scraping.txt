@@ -1,0 +1,20 @@
+1. Wikipedia restricts a lot of internal and administrative pages.
+The main ones I noticed are special pages (/wiki/Special:),
+backend wiki pages (/w/), API endpoints (/api/), deletion
+discussion pages, arbitration pages, and various admin
+noticeboard pages. Basically anything that is internal
+Wikipedia business rather than actual article content.
+
+2. Yes. Lots of specific bots are completely blocked, including
+wget, HTTrack, and several others that were flagged for
+making too many requests or behaving badly. SemrushBot is
+allowed but has to wait 5 seconds between requests. A couple
+of Wikipedia's own work bots have no restrictions at all.
+
+3. The robots.txt file is basically a website's way of telling
+scrapers what they are and are not allowed to access. It
+protects the server from being slammed with too many requests
+and keeps private pages from being scraped. As a developer
+you should always check robots.txt before scraping a site
+because ignoring it can get your IP blocked and could even
+cause legal problems.
