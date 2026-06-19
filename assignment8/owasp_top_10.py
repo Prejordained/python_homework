@@ -1,3 +1,4 @@
+# Task 6: Scraping Structured Data - OWASP Top 10
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -16,11 +17,13 @@ driver = webdriver.Chrome(
 )
 
 try:
+    # Load the OWASP Top 10 page
     driver.get("https://owasp.org/Top10/2025/")
     sleep(3)
 
     results = []
 
+    # Find each of the top 10 vulnerability links
     links = driver.find_elements(By.CSS_SELECTOR, 'ol li a')
     
     for link in links:
@@ -31,6 +34,7 @@ try:
 
     print(results)
 
+    # Write results to CSV
     with open('owasp_top_10.csv', 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=['title', 'href'])
         writer.writeheader()

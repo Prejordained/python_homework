@@ -1,3 +1,13 @@
+Task 1:
+
+I checked https://durhamcountylibrary.org/robots.txt before scraping.
+The disallowed path is /staff/ for all general user agents. My
+scraping steps only target the public search results page, which is
+not part of the restricted /staff/ section, so my scraping complies
+with the site's policy.
+
+Task 5:
+
 1. Wikipedia restricts a lot of internal and administrative pages.
 The main ones I noticed are special pages (/wiki/Special:),
 backend wiki pages (/w/), API endpoints (/api/), deletion

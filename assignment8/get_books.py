@@ -1,3 +1,4 @@
+# Task 3: Write a Program to Extract Book Data
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -17,14 +18,17 @@ driver = webdriver.Chrome(
 )
 
 try:
+    # Load the search results page
     driver.get("https://durhamcounty.bibliocommons.com/v2/search?query=learning%20spanish&searchType=smart")
-    sleep(3)  # wait 3 seconds for page to fully load
+    sleep(3)
 
+    # Find all book search result items
     books = driver.find_elements(By.CSS_SELECTOR, 'li.cp-search-result-item')
     print(f"Found {len(books)} books")
 
     results = []
 
+    # Main loop: extract title, author, and format-year for each book
     for book in books:
         try:
             title = book.find_element(By.CSS_SELECTOR, 'span.title-content').text.strip()
@@ -47,6 +51,7 @@ try:
     df = pd.DataFrame(results)
     print(df)
 
+    # Task 4: Write out the data to CSV and JSON
     df.to_csv('get_books.csv', index=False)
     print("Saved to get_books.csv")
 
