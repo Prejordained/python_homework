@@ -94,6 +94,19 @@ try:
 
         add_subscription(cursor, charlie_id, vogue_id, "2027-01-01")
 
+        cursor.execute("SELECT subscriber_id FROM subscribers WHERE name = ?", ("Dennis Reynolds",))
+        dennis_id = cursor.fetchone()[0]
+        cursor.execute("SELECT magazine_id FROM magazines WHERE name = ?", ("GQ",))
+        gq_id = cursor.fetchone()[0]
+
+        cursor.execute("SELECT subscriber_id FROM subscribers WHERE name = ?", ("Mac McDonald",))
+        mac_id = cursor.fetchone()[0]
+        cursor.execute("SELECT magazine_id FROM magazines WHERE name = ?", ("Cosmopolitan",))
+        cosmo_id = cursor.fetchone()[0]
+
+        add_subscription(cursor, dennis_id, gq_id, "2027-03-15")
+        add_subscription(cursor, mac_id, cosmo_id, "2027-06-30")
+
         conn.commit()
         print("Sample data inserted successfully.")
 
