@@ -1,0 +1,6 @@
+HTML class values found for Durham County Library scraping (Task 2):
+
+Search result item (li): row cp-search-result-item
+Title: span.title-content
+Author link: a.author-link
+Format/Year: span.display-info-primary
